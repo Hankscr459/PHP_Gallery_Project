@@ -27,7 +27,7 @@
             return $result_set;
         }
 
-        private static function intantation($found_user) {
+        public static function intantation($found_user) {
             $the_object = new self;
                 
             $the_object->id         = $found_user['id'];
