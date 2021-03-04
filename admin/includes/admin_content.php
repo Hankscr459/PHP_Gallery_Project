@@ -9,14 +9,14 @@
 
             </h1>
             <?php
-                $user = new User();
+                // $user = new User();
 
-                $user->username = "pikachu";
-                $user->password = "123456";
-                $user->first_name = "muscular";
-                $user->last_name = "pikachu";
+                // $user->username = "pikachu";
+                // $user->password = "123456";
+                // $user->first_name = "muscular";
+                // $user->last_name = "pikachu";
 
-                $user->create();
+                // $user->create();
             ?>
            
 
