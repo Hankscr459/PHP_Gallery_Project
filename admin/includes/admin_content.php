@@ -18,11 +18,11 @@
 
                 // $user->create();
 
-                $user = User::find_user_by_id(3);
+                // $user = User::find_user_by_id(3);
 
-                $user->last_name = "Pikchu";
+                // $user->last_name = "Pikchu";
 
-                $user->update();
+                // $user->update();
             ?>
            
 
