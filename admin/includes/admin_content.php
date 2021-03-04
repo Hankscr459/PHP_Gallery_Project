@@ -9,14 +9,14 @@
 
             </h1>
             <?php
-                // $user = new User();
+                $user = new User();
 
-                // $user->username = "pikachu";
-                // $user->password = "123456";
-                // $user->first_name = "muscular";
-                // $user->last_name = "pikachu";
+                $user->username = "pikachu";
+                $user->password = "123456";
+                $user->first_name = "muscular";
+                $user->last_name = "pikachu";
 
-                // $user->create();
+                $user->create();
 
                 // $user = User::find_user_by_id(3);
 
@@ -27,10 +27,10 @@
                 // $user = User::find_user_by_id(1);
                 // $user->username = "Hank";
 
-                $user = new User();
-                $user->username = "Edwin";
+                // $user = new User();
+                // $user->username = "Edwin";
 
-                $user->save();
+                // $user->save();
             ?>
            
 
