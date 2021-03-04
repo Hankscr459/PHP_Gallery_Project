@@ -23,6 +23,9 @@
                 // $user->last_name = "Pikchu";
 
                 // $user->update();
+
+                $user = User::find_user_by_id(3);
+                $user->delete();
             ?>
            
 
