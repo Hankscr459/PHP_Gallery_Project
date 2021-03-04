@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2021-03-02 12:31:38
+-- 產生時間： 2021-03-04 16:10:24
 -- 伺服器版本： 10.4.17-MariaDB
 -- PHP 版本： 7.3.27
 
@@ -36,6 +36,16 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- 傾印資料表的資料 `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `first_name`, `last_name`) VALUES
+(1, 'Hank', '123456', 'John', 'Doe'),
+(2, 'Tommy', '123456', 'Tommy', 'json'),
+(9, 'pikachu', '123456', 'muscular', 'Pikchu'),
+(10, 'pikachu', '123456', 'muscular', 'pikachu');
+
+--
 -- 已傾印資料表的索引
 --
 
@@ -53,7 +63,7 @@ ALTER TABLE `users`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
