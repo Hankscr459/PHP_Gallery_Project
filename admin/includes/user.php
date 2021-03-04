@@ -89,12 +89,16 @@
 
         public function update() {
             global $database;
+
+            $properties = $this->properties();
+            $properties_pairs = array();
+
+            foreach ($properties as $key => $value) {
+                $properties_pairs[] = "{$key}='{$value}'";
+            }
             
             $sql = "UPDATE " . self::$db_table . " SET ";
-            $sql .= "username= '" . $database->escape_string($this->username)     . "', ";
-            $sql .= "password= '" . $database->escape_string($this->password)     . "', ";
-            $sql .= "first_name= '" . $database->escape_string($this->first_name) . "', ";
-            $sql .= "last_name= '" . $database->escape_string($this->last_name)   . "' ";
+            $sql .= implode(", ", $properties_pairs);
             $sql .= " WHERE id= " . $database->escape_string($this->id);
 
             $database->query($sql);
