@@ -24,8 +24,13 @@
 
                 // $user->update();
 
-                $user = User::find_user_by_id(3);
-                $user->delete();
+                // $user = User::find_user_by_id(1);
+                // $user->username = "Hank";
+
+                $user = new User();
+                $user->username = "Edwin";
+
+                $user->save();
             ?>
            
 
