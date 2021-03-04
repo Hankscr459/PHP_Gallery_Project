@@ -20,6 +20,7 @@
             $the_message = "Your password username are incorrect";
         }
     } else {
+        $the_message= "";
         $username = "";
         $password = "";
     }

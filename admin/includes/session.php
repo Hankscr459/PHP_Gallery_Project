@@ -3,11 +3,13 @@
 
         private $signed_in = false;
         public $user_id;
+        public $message;
 
         function __construct() 
         {
             session_start();
             $this->check_the_login();
+            $this->check_message();
         }
 
         public function is_signed_in() {
@@ -34,6 +36,22 @@
             } else {
                 unset($this->user_id);
                 $this->signed_in = false;
+            }
+        }
+
+        public function message($msg="") {
+            if(!empty($msg)) {
+                $_SESSION['message'] = $msg;
+            } else {
+                return $this->message;
+            }
+        }
+
+        private function check_message() {
+            if(isset($_SESSION['message'])) {
+                $this->$_SESSION['message'];
+            } else {
+                $this->message = "";
             }
         }
     }
