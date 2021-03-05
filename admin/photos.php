@@ -36,7 +36,8 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <?php foreach ($photos as $photo) ?>
+
+                            <?php foreach ($photos as $photo): ?>
                                 <tr>
                                     <td>
                                         <img src="<?php echo $photo->picture_path(); ?>" alt="">
@@ -51,6 +52,9 @@
                                     <td><?php echo $photo->title ?></td>
                                     <td><?php echo $photo->size ?></td>
                                 </tr>
+
+                            <?php endforeach; ?>
+
                             </tbody>
                         </table>
                     </div>
