@@ -41,5 +41,25 @@
             }
 
         }
+
+
+        public function save() {
+            if ($this->photo_id) {
+                $this->update();
+            } else {
+                if(!empty($this->errors)) {
+                    return false;
+                }
+
+                if (empty($this->filename) || empty($this->temp_path)) {
+                    $this->errors[] = "The file was not available";
+                    return false;
+                }
+
+                $target_path = SITE_ROOT . DS . 'admin' . DS . $this->upload_directory . DS . $this->filename;
+
+                $this->create();
+            }
+        }
     }
 ?>
