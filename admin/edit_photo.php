@@ -1,8 +1,21 @@
 <?php include("includes/header.php"); ?>
+<?php if(!$session->is_signed_in()) {redirect("login.php");} ?>
 
 <?php
+
+    if(empty($_GET['id'])) {
+        redirect("photo.php");
+    } else {
+        $photo = Photo::find_by_id($_GET['id']);
+    }
+
     if (isset($_POST['update'])) {
-        echo "YES IT WORKS";
+        if($photo) {
+            $_POST['title'];
+            $_POST['caption'];
+            $_POST['alternate_text'];
+            $_POST['description'];
+        }
     }
 ?>
         <!-- Navigation -->
