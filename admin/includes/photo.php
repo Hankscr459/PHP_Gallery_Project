@@ -23,5 +23,23 @@
             UPLOAD_ERR_CANT_WRITE=> "Failed to write file to disk.",
             UPLOAD_ERR_EXTENSION => "A PHP extension stopped the file upload."
         );
+
+        // This is passing $_FILES['uploaded_file'] as an argument
+        public function set_file($file) {
+
+            if (empty($file) || !$file || !is_array($file)) {
+                $this->errors[] = "There was no file uploaded here";
+                return false;
+            } else if ($file['error'] != 0) {
+                $this->errors[] = $this->upload_errors_array[$file['error']];
+                return false;
+            } else {
+                $this->filename = basename($file['name']);
+                $this->temp_path = $file['temp_name'];
+                $this->type = $file['type'];
+                $this->size = $file['size'];
+            }
+
+        }
     }
 ?>
