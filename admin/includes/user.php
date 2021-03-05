@@ -9,15 +9,13 @@
         public $first_name;
         public $last_name;
 
-        public static function find_all_users() {
-            // global $database;
-            // $result_set = $database->query("SELECT * FROM users");
-            return self::find_this_query("SELECT * FROM users");
+        public static function find_all() {
+            return self::find_this_query("SELECT * FROM " . self::$db_table . " ");
         }
 
-        public static function find_user_by_id($user_id) {
+        public static function find_by_id($user_id) {
             global $database;
-            $this_result_array = self::find_this_query("SELECT * FROM users WHERE id = {$user_id} LIMIT 1");
+            $this_result_array = self::find_this_query("SELECT * FROM " . self::$db_table . " WHERE id = {$user_id} LIMIT 1");
 
             return !empty($this_result_array) ? array_shift($this_result_array) : false;
         }
