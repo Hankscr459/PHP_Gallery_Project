@@ -2,8 +2,8 @@
     class Photo extends DB_object {
 
         protected static $db_table = "photos";
-        protected static $db_table_fields = array('photo_id', 'title', 'description', 'filename', 'type', 'size');
-        public $photo_id;
+        protected static $db_table_fields = array('id', 'title', 'description', 'filename', 'type', 'size');
+        public $id;
         public $title;
         public $description;
         public $filename;
@@ -15,8 +15,8 @@
         public $custom_errors = array();
         public $upload_errors_array = array(
             UPLOAD_ERR_OK        => "There is no error",
-            UPLOAD_ERR_INI_SIZE  => "The uploaded file exceeds the upload_max_filesize ",
-            UPLOAD_ERR_FORM_SIZE => "The uploaded file exceeds the MAX_FILE_SIZE directive",
+            UPLOAD_ERR_INI_SIZE  => "The uploaded file exceeds the upload_max_filesize directive in php.ini",
+            UPLOAD_ERR_FORM_SIZE => "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML",
             UPLOAD_ERR_PARTIAL   => "The uploaded file was only partially uploaded.",
             UPLOAD_ERR_NO_FILE   => "No file was uploaded.",
             UPLOAD_ERR_NO_TMP_DIR=> "Missing a temporary folder.",
@@ -47,7 +47,7 @@
         }
 
         public function save() {
-            if ($this->photo_id) {
+            if ($this->id) {
                 $this->update();
             } else {
                 if(!empty($this->errors)) {

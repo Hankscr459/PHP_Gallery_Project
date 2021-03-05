@@ -34,8 +34,11 @@
 
                 // $user->update();
 
-                // $user = User::find_user_by_id(1);
-                // $user->username = "Hank";
+                // $user = User::find_by_id(1);
+                // echo $user->username;
+
+                $photo = Photo::find_by_id(3);
+                echo $photo->filename;
 
                 // $user = new User();
                 // $user->username = "Edwin";
@@ -55,7 +58,8 @@
 
                 // $photo->create();
 
-                echo INCLUDES_PATH;
+                // echo INCLUDES_PATH;
+
             ?>
            
             <ol class="breadcrumb">
