@@ -19,11 +19,11 @@
                 // $user->create();
 
 
-                $users = User::find_all();
+                // $users = User::find_all();
 
-                foreach ($users as $user) {
-                    echo $user->username;
-                }
+                // foreach ($users as $user) {
+                //     echo $user->username;
+                // }
 
 
 
@@ -41,10 +41,21 @@
                 // $user->username = "Edwin";
 
                 // $user->save();
+
+
+                // $photos = Photo::find_all();
+                // foreach ($photos as $photo) {
+                //     echo $photo->title;
+                // }
+
+                $photo = new Photo();
+
+                $photo->title = "just some test title";
+                $photo->size = 20;
+
+                $photo->create();
             ?>
            
-
-
             <ol class="breadcrumb">
                 <li>
                     <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>

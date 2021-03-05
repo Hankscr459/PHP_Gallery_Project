@@ -1,9 +1,9 @@
 <?php
     class Photo extends DB_object {
 
-        protected $db_table = "photos";
-        protected $db_table_fields = array('Photo_id', 'title', 'description', 'filename', 'type', 'size');
-        public $Photo_id;
+        protected static $db_table = "photos";
+        protected static $db_table_fields = array('photo_id', 'title', 'description', 'filename', 'type', 'size');
+        public $photo_id;
         public $title;
         public $description;
         public $filename;
