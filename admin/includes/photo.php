@@ -58,7 +58,22 @@
 
                 $target_path = SITE_ROOT . DS . 'admin' . DS . $this->upload_directory . DS . $this->filename;
 
-                $this->create();
+                if(file_exists($target_path)) {
+                    $this->error_get_last[] = "The file {$this->filename} already exists";
+                    return false;
+                }
+
+
+                if(move_uploaded_file($this->temp_path, $target_path)) {
+                    if($this->create()) {
+                        unset($this->temp_path);
+                        return true;
+                    }
+                } else {
+                    $this->errors[] = "the file directory probably does not have permission";
+                    return false;
+                }
+
             }
         }
     }
