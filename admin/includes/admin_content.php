@@ -48,12 +48,14 @@
                 //     echo $photo->title;
                 // }
 
-                $photo = new Photo();
+                // $photo = new Photo();
 
-                $photo->title = "just some test title";
-                $photo->size = 20;
+                // $photo->title = "just some test title";
+                // $photo->size = 20;
 
-                $photo->create();
+                // $photo->create();
+
+                echo INCLUDES_PATH;
             ?>
            
             <ol class="breadcrumb">
