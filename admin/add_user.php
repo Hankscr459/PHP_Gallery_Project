@@ -36,7 +36,7 @@
             <div class="row">
                 <form action="" method="post">
                     <div class="col-lg-12">
-                        <form action="" method="post" enctype="multipart/form-data"></form>
+                        <form action="" method="post" enctype="multipart/form-data">
                             <div class="col-md-8">
                                 <h1 class="page-header">
                                     Add User
@@ -72,7 +72,7 @@
                                 </div>
                                 
                             </div>
-
+                        </form>
                         
                     </div>
                 </form>
