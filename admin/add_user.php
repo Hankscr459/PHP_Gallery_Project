@@ -2,18 +2,20 @@
 <?php if(!$session->is_signed_in()) {redirect("login.php");} ?>
 
 <?php
-        // $user = User::find_by_id($_GET['id']);
+
+    $user = new User();
 
     if (isset($_POST['create'])) {
-        // if($user) {
-        //     $user->username = $_POST['username'];
-        //     $user->first_name = $_POST['first_name'];
-        //     $user->last_name = $_POST['last_name'];
-        //     $user->password = $_POST['password'];
+        if($user) {
+            $user->username = $_POST['username'];
+            $user->first_name = $_POST['first_name'];
+            $user->last_name = $_POST['last_name'];
+            $user->password = $_POST['password'];
+            $user->user_image = $_POST['user_image'];
 
-        //     $user->save();
-        // }
-        echo 'create';
+            $user->save();
+        }
+        // echo 'create';
     }
 ?>
         <!-- Navigation -->
@@ -40,6 +42,10 @@
                                     Photos
                                     <small>Subheading</small>
                                 </h1>
+
+                                <div class="form-group">
+                                    <input type="file" name="user_image" class="form-control">
+                                </div>
 
                                 <div class="form-group">
                                     <label for="username">Username</label>
