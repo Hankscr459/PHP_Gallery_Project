@@ -4,15 +4,16 @@
 <?php
         // $user = User::find_by_id($_GET['id']);
 
-    if (isset($_POST['update'])) {
-        if($user) {
-            $user->username = $_POST['username'];
-            $user->first_name = $_POST['first_name'];
-            $user->last_name = $_POST['last_name'];
-            $user->password = $_POST['password'];
+    if (isset($_POST['create'])) {
+        // if($user) {
+        //     $user->username = $_POST['username'];
+        //     $user->first_name = $_POST['first_name'];
+        //     $user->last_name = $_POST['last_name'];
+        //     $user->password = $_POST['password'];
 
-            $user->save();
-        }
+        //     $user->save();
+        // }
+        echo 'create';
     }
 ?>
         <!-- Navigation -->
@@ -60,6 +61,10 @@
                                     <input type="text" name="password" class="form-control">
                                 </div>
 
+                                <div class="form-group">
+                                    <input type="submit" name="create" value="Create User" class="btn btn-primary btn-lg ">
+                                </div>
+                                
                             </div>
 
                         
