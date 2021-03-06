@@ -10,7 +10,14 @@
     echo $photo->title;
 
     if(isset($_POST['submit'])) {
-        echo 'Hello';
+        $author = trim($_POST['author']);
+        $body = trim($_POST['body']);
+
+        Comment::create_comment($photo->id, $author, $body);
+
+        if($new_comment && $new_comment->save()) {
+            redirect("photo.php?id={$photo->id}");
+        }
     }
 ?>
 
