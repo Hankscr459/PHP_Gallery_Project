@@ -34,48 +34,44 @@
 
             <!-- Page Heading -->
             <div class="row">
-                <form action="" method="post">
                     <div class="col-lg-12">
-                        <form action="" method="post" enctype="multipart/form-data">
                             <div class="col-md-8">
-                                <h1 class="page-header">
-                                    Add User
-                                    <small>Subheading</small>
-                                </h1>
+                            <form action="" method="post" enctype="multipart/form-data">
+                                    <h1 class="page-header">
+                                        Add User
+                                        <small>Subheading</small>
+                                    </h1>
 
-                                <div class="form-group">
-                                    <input type="file" name="user_image" class="form-control">
-                                </div>
+                                    <div class="form-group">
+                                        <input type="file" name="user_image">
+                                    </div>
 
-                                <div class="form-group">
-                                    <label for="username">Username</label>
-                                    <input type="text" name="username" class="form-control">
-                                </div>
+                                    <div class="form-group">
+                                        <label for="username">Username</label>
+                                        <input type="text" name="username" class="form-control">
+                                    </div>
 
-                                <div class="form-group">
-                                    <label for="first_name">First_Name</label>
-                                    <input type="text" name="first_name" class="form-control">
-                                </div>
+                                    <div class="form-group">
+                                        <label for="first_name">First_Name</label>
+                                        <input type="text" name="first_name" class="form-control">
+                                    </div>
 
-                                <div class="form-group">
-                                    <label for="last_name">Last_Name</label>
-                                    <input type="text" name="last_name" class="form-control">
-                                </div>
+                                    <div class="form-group">
+                                        <label for="last_name">Last_Name</label>
+                                        <input type="text" name="last_name" class="form-control">
+                                    </div>
 
-                                <div class="form-group">
-                                    <label for="password">Password</label>
-                                    <input type="password" name="password" class="form-control">
-                                </div>
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="password" name="password" class="form-control">
+                                    </div>
 
-                                <div class="form-group">
-                                    <input type="submit" name="create" value="Create User" class="btn btn-primary btn-lg ">
-                                </div>
-                                
+                                    <div class="form-group">
+                                        <input type="submit" name="create" value="Create User" class="btn btn-primary btn-lg ">
+                                    </div>
+                                </form>
                             </div>
-                        </form>
-                        
                     </div>
-                </form>
             </div>
             <!-- /.row -->
 
