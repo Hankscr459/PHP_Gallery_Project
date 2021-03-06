@@ -11,9 +11,9 @@
             $user->first_name = $_POST['first_name'];
             $user->last_name = $_POST['last_name'];
             $user->password = $_POST['password'];
-            $user->user_image = $_POST['user_image'];
 
-            $user->save();
+            $user->set_file($_FILES['user_image']);
+            $user->save_user_and_image();
         }
         // echo 'create';
     }
@@ -39,7 +39,7 @@
                         <form action=""></form>
                             <div class="col-md-8">
                                 <h1 class="page-header">
-                                    Photos
+                                    Add User
                                     <small>Subheading</small>
                                 </h1>
 
