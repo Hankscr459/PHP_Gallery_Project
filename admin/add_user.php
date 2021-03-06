@@ -36,7 +36,7 @@
             <div class="row">
                 <form action="" method="post">
                     <div class="col-lg-12">
-                        <form action=""></form>
+                        <form action="" method="post" enctype="multipart/form-data"></form>
                             <div class="col-md-8">
                                 <h1 class="page-header">
                                     Add User
