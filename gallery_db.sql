@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2021-03-06 03:12:07
+-- 產生時間： 2021-03-06 04:04:28
 -- 伺服器版本： 10.4.17-MariaDB
 -- PHP 版本： 7.3.27
 
@@ -32,16 +32,17 @@ CREATE TABLE `users` (
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `first_name` varchar(255) NOT NULL,
-  `last_name` varchar(255) NOT NULL
+  `last_name` varchar(255) NOT NULL,
+  `user_image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- 傾印資料表的資料 `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `first_name`, `last_name`) VALUES
-(1, 'Hank', '123456', 'John', 'Doe'),
-(2, 'Tommy', '123456', 'Tommy', 'json');
+INSERT INTO `users` (`id`, `username`, `password`, `first_name`, `last_name`, `user_image`) VALUES
+(1, 'Hank', '123456', 'John', 'Doe', '75123bc2dc74ec46bdbd1875c9a5f6ef.jpg'),
+(2, 'Tommy', '123456', 'Tommy', 'json', '');
 
 --
 -- 已傾印資料表的索引
