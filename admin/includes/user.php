@@ -21,10 +21,10 @@
                 $this->errors[] = $this->upload_errors_array[$file['error']];
                 return false;
             } else {
-                $this->user_image = basename($file['user_image']);
+                $this->user_image = basename($file['name']);
                 $this->temp_path = $file['tmp_name'];
-                // $this->type = $file['type'];
-                // $this->size = $file['size'];
+                $this->type = $file['type'];
+                $this->size = $file['size'];
             }
 
         }
