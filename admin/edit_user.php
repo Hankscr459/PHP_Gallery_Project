@@ -12,15 +12,23 @@
     $user = User::find_by_id($_GET['id']);
 
     if (isset($_POST['update'])) {
+
         if($user) {
             $user->username = $_POST['username'];
             $user->first_name = $_POST['first_name'];
             $user->last_name = $_POST['last_name'];
             $user->password = $_POST['password'];
 
-            $user->set_file($_FILES['user_image']);
-            $user->save_user_and_image();
-        }
+            if(empty($_FILES['user_image'])) {
+                $user->save();
+            } else {
+                $user->set_file($_FILES['user_image']);
+                $user->save_user_and_image();
+                $user->save();
+                redirect("edit_user.php?id={$user->id}");
+            }
+
+        } 
     }
 
 ?>
@@ -76,7 +84,8 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <input type="submit" name="update" value="Update User" class="btn btn-primary btn-lg ">
+                                        <a href="delete_user.php?id=<?php echo $user->id; ?>" class="btn btn-danger">Delete</a>
+                                        <input type="submit" name="update" value="Update User" class="btn btn-primary">
                                     </div>
                                 </form>
                             </div>
