@@ -8,7 +8,7 @@
         public $author;
         public $body;
 
-        public static function create_comment($photo_id, $author="Hank", $body="") {
+        public static function create_comment($photo_id, $author="Test", $body="") {
             if (!empty($photo_id) && !empty($author) && !empty($body)) {
 
                 $comment = new Comment();
@@ -23,7 +23,7 @@
             }
         }
 
-        public static function find_the_comments($photo_id) {
+        public static function find_the_comments($photo_id=0) {
             global $database;
 
             $sql = "SELECT * FROM " . self::$db_table;
