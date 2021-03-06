@@ -3,9 +3,15 @@
 
 <?php
 
-    $user = new User();
 
-    if (isset($_POST['create'])) {
+
+    if (empty($_GET['id'])) {
+        redirect("users.php");
+    }
+
+    $user = User::find_by_id($_GET['id']);
+
+    if (isset($_POST['update'])) {
         if($user) {
             $user->username = $_POST['username'];
             $user->first_name = $_POST['first_name'];
@@ -15,8 +21,8 @@
             $user->set_file($_FILES['user_image']);
             $user->save_user_and_image();
         }
-        // echo 'create';
     }
+
 ?>
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -36,10 +42,13 @@
             <div class="row">
                     <div class="col-lg-12">
                             <h1 class="page-header">
-                                Add User
-                                <small>Subheading</small>
+                                Edit Users
                             </h1>
-                            <div class="col-md-8">
+                            <div class="col-md-6">
+                                <img class="img-reponsive" src="<?php echo $user->image_path_and_placeholder(); ?>" alt="">
+                            </div>
+
+                            <div class="col-md-6">
                             <form action="" method="post" enctype="multipart/form-data">
 
                                     <div class="form-group">
@@ -48,26 +57,26 @@
 
                                     <div class="form-group">
                                         <label for="username">Username</label>
-                                        <input type="text" name="username" class="form-control">
+                                        <input type="text" name="username" class="form-control" value="<?php echo $user->username; ?>">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="first_name">First_Name</label>
-                                        <input type="text" name="first_name" class="form-control">
+                                        <input type="text" name="first_name" class="form-control" value="<?php echo $user->first_name; ?>">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="last_name">Last_Name</label>
-                                        <input type="text" name="last_name" class="form-control">
+                                        <input type="text" name="last_name" class="form-control" value="<?php echo $user->last_name; ?>">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="password">Password</label>
-                                        <input type="password" name="password" class="form-control">
+                                        <input type="password" name="password" class="form-control" value="<?php echo $user->password; ?>">
                                     </div>
 
                                     <div class="form-group">
-                                        <input type="submit" name="create" value="Create User" class="btn btn-primary btn-lg ">
+                                        <input type="submit" name="update" value="Update User" class="btn btn-primary btn-lg ">
                                     </div>
                                 </form>
                             </div>
