@@ -49,7 +49,7 @@
                             </div>
 
                             <div class="form-group">
-                                <a href="thumbnail"><img src="<?php echo $photo->picture_path(); ?>" alt=""></a>
+                                <a class="thumbnail"><img src="<?php echo $photo->picture_path(); ?>" alt=""></a>
                             </div>
 
                             <div class="form-group">
