@@ -15,6 +15,8 @@
             $photo->caption = $_POST['caption'];
             $photo->alternate_text = $_POST['alternate_text'];
             $photo->description = $_POST['description'];
+
+            $photo->save();
         }
     }
 ?>
@@ -34,7 +36,7 @@
 
             <!-- Page Heading -->
             <div class="row">
-                <form action="edit_photo.php" method="post">
+                <form action="" method="post">
                     <div class="col-lg-12">
                         <div class="col-md-8">
                             <h1 class="page-header">
@@ -58,7 +60,7 @@
 
                             <div class="form-group">
                                 <label for="caption">Description</label>
-                                <textarea name="description" id="" cols="30" rows="10" class="form-control" value="<?php echo $photo->description; ?>"></textarea>
+                                <textarea name="description" id="" cols="30" rows="10" class="form-control"><?php echo $photo->description; ?></textarea>
                             </div>
 
                         </div>
