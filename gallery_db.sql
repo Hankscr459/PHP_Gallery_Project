@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2021-03-06 04:04:28
+-- 產生時間： 2021-03-06 08:28:31
 -- 伺服器版本： 10.4.17-MariaDB
 -- PHP 版本： 7.3.27
 
@@ -41,8 +41,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `first_name`, `last_name`, `user_image`) VALUES
-(1, 'Hank', '123456', 'John', 'Doe', '75123bc2dc74ec46bdbd1875c9a5f6ef.jpg'),
-(2, 'Tommy', '123456', 'Tommy', 'json', '');
+(1, 'Hank', '123456', 'update', 'Doe', '75123bc2dc74ec46bdbd1875c9a5f6ef.jpg'),
+(21, 'juyyu', 'yjyujuyjuy', 'juyuyju', 'yjuyjuyju', 'images-15.jpg');
 
 --
 -- 已傾印資料表的索引
@@ -62,7 +62,7 @@ ALTER TABLE `users`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

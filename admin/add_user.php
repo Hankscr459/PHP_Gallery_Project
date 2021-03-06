@@ -67,7 +67,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <input type="submit" name="create" value="Create User" class="btn btn-primary btn-lg ">
+                                        <input type="submit" name="create" value="Create User" class="btn btn-primary">
                                     </div>
                                 </form>
                             </div>
