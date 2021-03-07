@@ -59,7 +59,7 @@
 
                             <div class="form-group">
                                 <label for="caption">Alternate Text</label>
-                                <input type="text" name="alternate_text" class="form-control">
+                                <input type="text" name="alternate_text" class="form-control" value="<?php echo $photo->alternate_text; ?>">
                             </div>
 
                             <div class="form-group">

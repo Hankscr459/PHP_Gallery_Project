@@ -2,7 +2,7 @@
     class Photo extends DB_object {
 
         protected static $db_table = "photos";
-        protected static $db_table_fields = array('id', 'title', 'description', 'description', 'filename', 'alternate_text', 'type', 'size');
+        protected static $db_table_fields = array('id', 'title', 'caption', 'description', 'description', 'filename', 'alternate_text', 'type', 'size');
         public $id;
         public $title;
         public $caption;
