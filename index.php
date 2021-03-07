@@ -1,5 +1,11 @@
 <?php include("includes/header.php"); ?>
 <?php 
+
+    $page = !empty($_GET['page']) ? (int)$_GET['page'] : 1;
+
+    $item_per_page = 4;
+    $items_total_count = Photo::count_all();
+
     $photos = Photo::find_all();
 ?>
 
