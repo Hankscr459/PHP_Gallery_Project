@@ -1,9 +1,12 @@
 <?php include("includes/header.php"); ?>
+<?php if(!$session->is_signed_in()) {redirect("login.php");} ?>
 
 <?php
     if(empty($_GET['id'])) {
-        redirect("photo.php");
+        redirect("photos.php");
     }
+
+    $comments = Comment::find_the_comments($_GET['id']);
 ?>
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -43,10 +46,9 @@
                                     
                                     <td>
                                     <?php echo $comment->author; ?>
-                                        <div class="pictures_link">
+                                        <div class="action_link">
                                             
                                             <a href="delete_comment.php?id=<?php echo $comment->id; ?>">Delete</a>
-                                            <a href="#">View</a>
                                         </div>
                                     </td>
                                     
