@@ -1,4 +1,7 @@
 <?php include("includes/header.php"); ?>
+<?php 
+    $photos = Photo::find_all();
+?>
 
 
         <div class="row">
@@ -6,18 +9,20 @@
             <!-- Blog Entries Column -->
             <div class="col-md-12">
 
-            <?php foreach ($photos as $photo): ?>
+                <div class="thumbnails row">
+                    <?php foreach ($photos as $photo): ?>
 
-            <div class="thumbnails row">
-                <div class="col-xs-6 col-md-3">
-                    <a href="" class="thumbnail"></a>
-                    <img src="" alt="">
+                        <div class="col-xs-6 col-md-3">
+                            <a href="" class="thumbnail">
+                            <img class="photo-thumbnail" src="admin/<?php echo $photo->picture_path(); ?>" alt="">
+                            </a>
+                        </div>
+                    
+
+
+                    <?php endforeach; ?>
                 </div>
             </div>
-
-            </div>
-
-            <?php endforeach; ?>
 
 
 
