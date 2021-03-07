@@ -3,6 +3,7 @@
 
         private $signed_in = false;
         public $user_id;
+        public $count;
         public $message;
 
         function __construct() 
@@ -49,7 +50,8 @@
 
         private function check_message() {
             if(isset($_SESSION['message'])) {
-                $this->$_SESSION['message'];
+                $this->message = $_SESSION['message'];
+                unset($_SESSION['message']);
             } else {
                 $this->message = "";
             }
