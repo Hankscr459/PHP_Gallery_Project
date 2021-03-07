@@ -28,7 +28,7 @@
     $comments = Comment::find_the_comments($photo->id);
 ?>
 <?php include("includes/header.php"); ?>
-
+        <div class="row">
             <div class="col-lg-12">
 
                 <!-- Blog Post -->
@@ -88,7 +88,6 @@
                     </a>
                     <div class="media-body">
                         <h4 class="media-heading"><?php echo $comment->author; ?>
-                            <small>August 25, 2014 at 9:30 PM</small>
                         </h4>
                         <?php echo $comment->body; ?>
                     </div>
@@ -96,7 +95,8 @@
                 <?php endforeach; ?>
 
             </div>
-
+        
+            </div>
             <!-- Blog Sidebar Widgets Column -->
             <!-- <div class="col-md-4">
 
