@@ -24,6 +24,19 @@ $(document).ready(function() {
         alert(image_id);
     })
 
+    $('#set_user_image').click(function() {
+        $.ajax({
+            url: "includes/ajax_code.php",
+            data: {image_name: image_name, user_id: user_id},
+            type: "POST",
+            success: function(data) {
+                if(!data.error) {
+                    alert(image_name);
+                }
+            }
+        });
+    })
+
     
 
     tinymce.init({ selector:'textarea' });
