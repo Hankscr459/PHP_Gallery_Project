@@ -20,7 +20,7 @@
         }
 
         public function page_total() {
-            return ceil($this->item_total_count/$this->items_per_page);
+            return ceil($this->items_total_count/$this->items_per_page);
         }
 
         public function has_previous() {
