@@ -10,7 +10,16 @@
         {
             session_start();
             $this->check_the_login();
+            $this->visitor_count();
             $this->check_message();
+        }
+
+        public function visitor_count() {
+            if (isset($_SESSION['count'])) {
+                return $this->count = $_SESSION['count']++;
+            } else {
+                return $_SESSION['count'] = 1;
+            }
         }
 
         public function is_signed_in() {
