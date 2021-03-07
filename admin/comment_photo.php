@@ -5,7 +5,6 @@
     if(empty($_GET['id'])) {
         redirect("photos.php");
     }
-    $message = "";
 
     $comments = Comment::find_the_comments($_GET['id']);
 ?>
